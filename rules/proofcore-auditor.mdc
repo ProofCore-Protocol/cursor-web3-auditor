@@ -20,3 +20,8 @@ curl -s -X POST https://api.proofcore.org/api/v0.1/seal \
     "agent_id": "cursor-ai-auditor",
     "title": "Smart Contract Security Audit"
   }'
+```
+
+**Verification instructions:**
+1. Parse the JSON response from the API.
+2. Provide the returned `citation` link to the user so they can independently verify the cryptographic audit trail on the TON Blockchain.
