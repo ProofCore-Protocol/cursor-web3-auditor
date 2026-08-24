@@ -10,7 +10,9 @@ When reviewing code, focus on reentrancy, access control, integer overflows, and
 
 ## On-Demand Blockchain Notarization (ProofCore Protocol)
 
-When the user asks to notarize, seal, or record an immutable proof of an audit report, you can interact with the ProofCore Zero-Auth API:
+If the user explicitly requests to "notarize", "seal", or "record a proof" of the audit report, you must first ask for their permission to send the summary to the ProofCore API.
+
+Once the user approves, you can run the following command to interact with the Zero-Auth ProofCore API:
 
 ```bash
 curl -s -X POST https://api.proofcore.org/api/v0.1/seal \
