@@ -1,16 +1,16 @@
-name: Notarize Release on TON
-
+name: Release Notary
 on:
   release:
     types: [published]
 
 jobs:
-  seal:
+  seal-release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write  # Required to update the release notes with the badge
+      id-token: write  # REQUIRED: Generates OIDC token to cryptographically prove repository identity
     steps:
-      - name: 🛡️ Cryptographically Seal Release Notes
+      - name: 🛡️ Cryptographically Notarize Release on TON
         uses: ProofCore-Protocol/proofcore-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
