@@ -11,6 +11,6 @@ jobs:
       id-token: write  # REQUIRED: Generates OIDC token to cryptographically prove repository identity
     steps:
       - name: 🛡️ Cryptographically Notarize Release on TON
-        uses: ProofCore-Protocol/proofcore-action@v1
+        uses: ProofCore-Protocol/proofcore-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
