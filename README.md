@@ -1,20 +1,34 @@
 # 🛡️ Cursor Web3 Security Auditor (with Blockchain Notarization)
 
-Supercharge your **Cursor IDE** or **Cline (Roo Code)** with this Web3 security prompt. 
-It hunts for reentrancy, overflow, and access control bugs, and allows you to **notarize your audit verdicts on the TON Blockchain** using the [ProofCore Protocol](https://proofcore.org) upon request.
+Supercharge your **Cursor IDE** or **Cline** with an autonomous Web3 security auditor. 
+It hunts for reentrancy, overflow, and access control bugs, and **cryptographically anchors audit verdicts on the TON Blockchain** using the [ProofCore Protocol](https://proofcore.org).
 
-## 🚀 How to use
+[![Cursor Directory](https://img.shields.io/badge/Cursor%20Directory-cursor--web3--auditor-blue)](https://cursor.directory/plugins/cursor-web3-auditor)
+[![Smithery](https://img.shields.io/badge/Smithery-100%2F100-brightgreen)](https://smithery.ai/server/proofcore-org/notary)
+[![TON Blockchain](https://img.shields.io/badge/Blockchain-TON-0098EA?logo=ton&logoColor=white)](https://ton.org)
 
-1. Copy the `rules/proofcore-auditor.mdc` file from this repository.
-2. Paste it into the `.cursor/rules/` directory of your Smart Contract / Web3 project.
-3. Ask your AI assistant to audit a contract: *"Review MyToken.sol for security vulnerabilities."*
+---
 
-## ✨ What happens next?
+## 🚀 Installation
 
-When you explicitly ask the AI to "notarize" or "seal" the report, it will ask for your permission to run a `curl` request to the Zero-Auth ProofCore API. Once approved, it will append a verifiable citation badge to its response:
+### Option A: Install via Cursor Directory (1-Click)
+Open [cursor.directory/plugins/cursor-web3-auditor](https://cursor.directory/plugins/cursor-web3-auditor) and click **Add to Cursor**.
 
-> *"I have found 1 High and 2 Low vulnerabilities in MyToken.sol. I fixed the reentrancy issue.*
+### Option B: Manual Setup
+1. Copy `rules/proofcore-auditor.mdc` to your project's `.cursor/rules/` directory.
+2. (Recommended) Add the ProofCore MCP server in Cursor Settings -> Features -> MCP:
+   - **Command:** `uvx proofcore-mcp`
+
+---
+
+## ✨ How it works in Chat
+
+Ask Cursor: *"Audit MyToken.sol for security vulnerabilities."*
+
+The AI will perform the audit and automatically seal the final verdict on the TON Blockchain:
+
+> *"I have found 0 Critical and 1 Low vulnerability in MyToken.sol.*
 > 
 > 🛡 **ProofCore Integrity Proof:** https://proofcore.org/app/123e4567-e89b-12d3-a456-426614174000"
 
-Your audit trail is now mathematically proven, timestamped, and anchored on-chain!
+Your audit trail is mathematically proven, timestamped with an Ed25519 notary signature, and anchored on-chain!
